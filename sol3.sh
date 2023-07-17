@@ -13,7 +13,7 @@ if [ $length -eq 0 ]; then
 fi
 
 if [[ $password =~ [^a-zA-Z0-9] ]]; then
-   (( sc=true ))
+     sc=true 
 fi
 
 if [ $length -lt 10 ]; then
@@ -28,11 +28,12 @@ fi
 
 for ((i=0;i<$length;i++))
 do
-	if [[ $password =~ [[:upper:]] ]]; then
+	char=${password:i:1}
+	if [[ $char =~ [[:upper:]] ]]; then
 		(( up++ ))
 	fi
 
-	if [[ $password =~ [[:lower:]] ]]; then
+	if [[ $char =~ [[:lower:]] ]]; then
                (( lc++ ))
         fi
 done
