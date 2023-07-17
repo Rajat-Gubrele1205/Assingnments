@@ -8,12 +8,14 @@ child_process(){
 }
 monitor(){
 while true; do
+
 if ! ps -p $pid 2> /dev/null; then
 
 	child_process
 
+
 fi
-sleep 10
+sleep 1
 done 
 }
 if [ $# -eq 0 ]; then 
